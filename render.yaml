@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: rsdeeplearning-gpu-live
+    runtime: node
+    plan: free
+    rootDir: live
+    buildCommand: npm install --omit=dev
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: INGEST_TOKEN
+        sync: false
