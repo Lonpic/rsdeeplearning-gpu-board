@@ -1,12 +1,12 @@
 services:
   - type: web
-    name: rsdeeplearning-gpu-live
+    name: rsdeeplearning-gpu-board
     runtime: node
     plan: free
+    region: oregon
     rootDir: live
     buildCommand: npm install --omit=dev
     startCommand: npm start
-    healthCheckPath: /health
     envVars:
       - key: INGEST_TOKEN
         sync: false
